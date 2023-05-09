@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "nuudel-best-time-finder"
+version = "0.1.0"
+description = ""
+authors = ["Philip Hackstock <20710924+phackstock@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "nuudel_best_time_finder"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.0.1"
+requests = "^2.30.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
