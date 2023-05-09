@@ -34,9 +34,9 @@ Say we have a nuudel poll at: <https://nuudel.digitalcourage.de/nuudel-poll-id> 
 to find two dates that cover the most amount of people simply run:
 
 ```python
-from nuudel_best_time_finder import find_best_time
+from nuudel_best_time_finder import find_best_times
 
-find_best_time(poll = "{nuudel-poll-id}", n=2, "results.csv")
+find_best_times(poll = "{nuudel-poll-id}", n =2, results_file = "results.csv")
 ```
 
 The results are then written to a file called `results.csv` with three columns:
