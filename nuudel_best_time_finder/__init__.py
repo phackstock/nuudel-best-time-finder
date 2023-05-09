@@ -7,7 +7,7 @@ import pandas as pd
 import requests
 
 
-def find_n_best_times(
+def find_best_times(
     poll: str, n: int, results_file: Optional[Union[str, Path]] = None
 ) -> None:
     data = pd.read_csv(
