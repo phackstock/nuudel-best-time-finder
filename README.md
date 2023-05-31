@@ -31,7 +31,8 @@ pip install nuudel-best-time-finder
 ## How to use
 
 Say we have a nuudel poll at: <https://nuudel.digitalcourage.de/nuudel-poll-id> and want
-to find two dates that cover the most amount of people simply run:
+to find two dates that cover the most amount of people simply run the following in your
+console:
 
 ```console
 nuudel-find-best-times {nuudel-poll-id} 2 --results-file results.csv
