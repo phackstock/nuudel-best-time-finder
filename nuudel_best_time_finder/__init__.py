@@ -1,15 +1,17 @@
 from io import StringIO
 from itertools import combinations
-from pathlib import Path
-from typing import Optional, Union
+from typing import Optional
 
 import pandas as pd
 import requests
+import typer
 
 
-def find_best_times(
-    poll: str, n: int, results_file: Optional[Union[str, Path]] = None
-) -> None:
+app = typer.Typer()
+
+
+@app.command()
+def find_best_times(poll: str, n: int, results_file: Optional[str] = None) -> None:
     data = pd.read_csv(
         StringIO(
             requests.get(
