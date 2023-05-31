@@ -1,3 +1,4 @@
+import importlib.metadata
 from io import StringIO
 from itertools import combinations
 from typing import Optional
@@ -6,8 +7,14 @@ import pandas as pd
 import requests
 import typer
 
+__version__ = importlib.metadata.version("nuudel_best_time_finder")
+
 
 app = typer.Typer()
+
+@app.command()
+def version():
+    return __version__
 
 
 @app.command()
