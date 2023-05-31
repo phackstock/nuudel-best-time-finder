@@ -2,7 +2,7 @@
 name = "nuudel-best-time-finder"
 version = "0.1.0"
 description = ""
-authors = ["Philip Hackstock <20710924+phackstock@users.noreply.github.com>"]
+authors = ["Philip Hackstock <p.hackstock@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [{include = "nuudel_best_time_finder"}]
@@ -11,7 +11,15 @@ packages = [{include = "nuudel_best_time_finder"}]
 python = "^3.10"
 pandas = "^2.0.1"
 requests = "^2.30.0"
+typer = {extras = ["all"], version = "^0.9.0"}
 
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.3.0"
+black = "^23.3.0"
+
+[tool.poetry.scripts]
+nuudel-find-best-times = "nuudel_best_time_finder:app"
 
 [build-system]
 requires = ["poetry-core"]

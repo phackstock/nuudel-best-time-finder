@@ -33,10 +33,16 @@ pip install nuudel-best-time-finder
 Say we have a nuudel poll at: <https://nuudel.digitalcourage.de/nuudel-poll-id> and want
 to find two dates that cover the most amount of people simply run:
 
+```console
+nuudel-find-best-times {nuudel-poll-id} 2 --results-file results.csv
+```
+
+or alternatively as part of a script:
+
 ```python
 from nuudel_best_time_finder import find_best_times
 
-find_best_times(poll = "{nuudel-poll-id}", n =2, results_file = "results.csv")
+find_best_times(poll = "{nuudel-poll-id}", n = 2, results_file = "results.csv")
 ```
 
 The results are then written to a file called `results.csv` with three columns:
