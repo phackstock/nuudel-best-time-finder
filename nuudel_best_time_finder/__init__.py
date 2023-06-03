@@ -6,19 +6,30 @@ from typing import Optional
 import pandas as pd
 import requests
 import typer
+from typing_extensions import Annotated
 
 __version__ = importlib.metadata.version("nuudel_best_time_finder")
 
 
+def version_callback(value: bool):
+    if value:
+        typer.echo(__version__)
+        raise typer.Exit()
+
+
 app = typer.Typer()
 
-@app.command()
-def version():
-    return __version__
-
 
 @app.command()
-def find_best_times(poll: str, n: int, results_file: Optional[str] = None) -> None:
+def main(
+    poll: str,
+    n: int,
+    results_file: Optional[str] = None,
+    version: Annotated[
+        Optional[bool],
+        typer.Option("--version", callback=version_callback, is_eager=True),
+    ] = None,
+) -> None:
     data = pd.read_csv(
         StringIO(
             requests.get(
