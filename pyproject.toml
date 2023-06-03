@@ -21,6 +21,11 @@ black = "^23.3.0"
 [tool.poetry.scripts]
 nuudel-find-best-times = "nuudel_best_time_finder:app"
 
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "semver"
+
 [build-system]
 build-backend = "poetry_dynamic_versioning.backend"
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
