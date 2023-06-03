@@ -24,7 +24,8 @@ nuudel-find-best-times = "nuudel_best_time_finder:app"
 [tool.poetry-dynamic-versioning]
 enable = true
 vcs = "git"
-style = "semver"
+style = "pep440"
+bump = true
 
 [build-system]
 build-backend = "poetry_dynamic_versioning.backend"
