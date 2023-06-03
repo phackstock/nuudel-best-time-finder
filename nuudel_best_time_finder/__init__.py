@@ -22,9 +22,11 @@ app = typer.Typer()
 
 @app.command()
 def main(
-    poll: str,
-    n: int,
-    results_file: Optional[str] = None,
+    poll: Annotated[str, typer.Argument(help="Id of the nuudel poll")],
+    n: Annotated[int, typer.Argument(help="Number of times to find")],
+    results_file: Annotated[
+        Optional[str], typer.Option(help="Name of the file to export results")
+    ] = None,
     version: Annotated[
         Optional[bool],
         typer.Option("--version", callback=version_callback, is_eager=True),
